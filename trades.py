@@ -9,6 +9,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import seaborn as sns
+sns.set_style("white")
 
 # source: OWLTRAD http://www.ciolek.com/OWTRAD/DATA/tmcZWEm1300a.html
 def read (path):
