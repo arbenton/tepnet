@@ -1,4 +1,4 @@
-## tepnet
+## Trade Epidemic Network
 
 A simulation of disease dispersion over historic trade networks.
 
@@ -27,10 +27,10 @@ summation of the adjacency matrix of the trade network and the identity matrix (
 transm = r*nx.adjacency_matrix(graph) + m*sp.eye(nx.number_of_nodes(graph))
 ```
 
-The `pulse` array begins as all zeros, with element set to a small value. This represents the proportion of
+The `pulse` array begins as all zeros, with one element set to a small value (`>=.1`). This represents the proportion of
 infection in the network.
 
-#### Some Nifty Graphs
+#### Some Nifty Plots
 
 The system generally levels out into steady state behavior. For example, this time series shows a circumstance 
 where the disease was able to "get a footing". In this case, it levels out. This is by far the most common case
