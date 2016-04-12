@@ -59,7 +59,7 @@ def plot (history):
     plt.title("Infection Rate per Epoch")
     plt.xlabel("Epoch")
     plt.ylabel("Infection Rate")
-    fig.savefig("time_series.png")    
+    fig.savefig("zoom.png")    
 
 def graph (graph, nodes, history):
 
@@ -75,6 +75,6 @@ if __name__ == "__main__":
     T = transmission(G)
     P = np.zeros(len(N))
     P[160] = .1 # some place gets sick
-    H = iterpulse(T, P, 200)  
+    H = iterpulse(T, P, 50)  
     plot(H) 
-    graph(G, N, H)
+    #graph(G, N, H)
