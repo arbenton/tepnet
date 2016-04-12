@@ -12,7 +12,7 @@ if it is on there, it is a valid trade route.
 
 #### The Math
 
-The workhorse of this program is a simple loop that expresses a recursive function describing the transfer of
+Most of the calculations in the prediction algorithm are pretty simplistic and efficient, especially due to the ease of vectorization. The workhorse of this program is a simple loop that expresses a recursive function describing the transfer of
 disease over the network.
 
 ```python
