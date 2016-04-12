@@ -74,6 +74,6 @@ if __name__ == "__main__":
     T = transmission(G)
     P = np.zeros(len(N))
     P[160] = .1 # some place gets sick
-    H = iterpulse(T, P, 150)  
+    H = iterpulse(T, P, 200)  
     plot(H) 
     graph(G, N, H)
