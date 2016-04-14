@@ -10,7 +10,6 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.animation as ani
 import seaborn as sns
-sns.set_style("white")
 
 # source: OWLTRAD http://www.ciolek.com/OWTRAD/DATA/tmcZWEm1300a.html
 def read (path):
@@ -53,34 +52,37 @@ def iterpulse (transm, pulse, epochs):
 
     return history
 
-def plot (history):
+def plot (history, location):
 
     fig = plt.figure(figsize=(9,9))
     plt.plot(history)
     plt.title("Infection Rate per Epoch")
     plt.xlabel("Epoch")
     plt.ylabel("Infection Rate")
-    fig.savefig("time_series.png")
+    fig.savefig(location)
 
-def graph (graph, nodes, history):
-
+def graph (graph, nodes, history, e, location):
 
     def animate(i, graph, nodes, history):
         return nx.draw(graph, nodes, node_color=history[i],
                 node_size=25, cmap=plt.cm.Blues, arrows=False)
 
     fig = plt.figure()
-    anim = ani.FuncAnimation(fig, animate, frames=200, interval=100,
+    anim = ani.FuncAnimation(fig, animate, frames=e, interval=100,
             fargs=(graph, nodes, history), blit=True)
-    anim.save('network.mp4', dpi=100)
+    anim.save(location, dpi=300)
 
 if __name__ == "__main__":
 
-    N, E = read("edges.csv")
+    N, E = read("data/edges.csv")
     G = network(E)
     T = transmission(G)
     P = np.zeros(len(N))
-    P[50] = .1 # some place gets sick
-    H = iterpulse(T, P, 150)
-    plot(H)
-    graph(G, N, H)
+    P[90] = .1 # some place gets sick
+    e = 200
+    H = iterpulse(T, P, e)
+    print "Plotting..."
+    plot(H,"plots/time_series.png")
+    print "Animating..."
+    graph(G, N, H, e, "plots/network.mp4")
+    print "Complete"
