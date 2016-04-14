@@ -47,4 +47,4 @@ that is actually interesting.
 
 Finally, there's some amazing dynamic behavior in the early epochs.
 
-![dynamic](https://github.com/arbenton/tepnet/blob/master/zoom.png)
+![dynamic](https://github.com/arbenton/tepnet/blob/master/archive/zoomed.png)
