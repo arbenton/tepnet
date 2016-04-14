@@ -35,7 +35,7 @@ infection in the network.
 More excitingly, if the disease is able to spread, it will infect an entire subgraph. This network graph
 corresponds to the above parameters. Imagine a map of Europe underneath, because I don't want to put one there.
 
-![network graph](https://github.com/arbenton/tepnet/blob/master/plots/network.png)
+![network graph](https://github.com/arbenton/tepnet/blob/master/archive/france.png)
 
 #### Some Nifty Plots
 
