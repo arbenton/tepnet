@@ -10,6 +10,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.animation as ani
 import seaborn as sns
+sns.set_style("white")
 
 # source: OWLTRAD http://www.ciolek.com/OWTRAD/DATA/tmcZWEm1300a.html
 def read (path):
@@ -83,6 +84,6 @@ if __name__ == "__main__":
     H = iterpulse(T, P, e)
     print "Plotting..."
     plot(H,"plots/time_series.png")
-    print "Animating..."
-    graph(G, N, H, e, "plots/network.mp4")
-    print "Complete"
+    #print "Animating..."
+    #graph(G, N, H, e, "plots/network.mp4")
+    #print "Complete"
